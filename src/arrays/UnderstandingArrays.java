@@ -56,6 +56,9 @@ public class UnderstandingArrays {
             System.out.println(names[i] + " 's age is " + ages[i] + " and his fav char is " + favCharacters[i] + ".");
 
         }
+
+        System.out.println(names.length);  // 3
+        System.out.println(names[0].equals("Alex"));
     }
 
 }
