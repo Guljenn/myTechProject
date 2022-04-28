@@ -36,5 +36,7 @@ public class Exercise03_count_each_character_in_string {
             System.out.println(entry);
         }
 
+
+
     }
 }
