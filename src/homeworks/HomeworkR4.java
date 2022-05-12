@@ -68,22 +68,7 @@ public class HomeworkR4 {
 
                     // TASK 6 noA()
 
-                    /*
-                    Requirement:
-                -Create a method called noA()
-                -This method will take a String array argument and it
-                will return a new array with all elements starting with A
-                or a replaced with “###”
-                NOTE: Assume length will always be more than zero
-                NOTE: Ignore cases
-                Test Data 1: [“java”, “hello”, “123”, “xyz”]
-                Expected Result 1: [“java”, “hello”, “123”, “xyz”]
-                Test Data 2: [“appium”, “123”, “ABC”, “java”]
-                Expected Result 2: [“###”, “123”, “###”, “java”]
-                Test Data 3: [“apple”, “appium”, “ABC”, “Alex”, “A”]
-                Expected Result 3: [“###”, “###”, “###”, “###”,
-                “###”]
-                     */
+
     public static String[] noA(String[] arr){
      for(int i = 0; i <= arr.length-1; i++){
          if(arr[i].toLowerCase().startsWith("a")){
@@ -106,24 +91,8 @@ public class HomeworkR4 {
         return arr;
     }
 
-                                // TASK 7 - countingPrimes()
-                 /*
-                    Requirement:
-                -Create a method called countPrimes()
-                -This method will take an int array argument and it will return
-                how many elements in the array are prime numbers
-                NOTE: Prime number is a number that can be divided only by 1
-                and itself
-                NOTE: Negative numbers cannot be prime
-                Examples: 2,3,5,7,11,13,17,19,23,29,31,37 etc.
-                NOTE: Smallest prime number is 2
-                Test Data 1: [-10, -3, 0, 1]
-                Expected Result 1: 0
-                Test Data 2: [7, 4, 11, 23, 17]
-                Expected Result 2: 4
-                Test Data 3: [41, 53, 19, 47, 67]
-                Expected Result 3:  5
-                 */
+                                // TASK 8 - countingPrimes()
+
     public static int countingPrimes(int[] arr){
         int count = 0;
         for (int number : arr) {
