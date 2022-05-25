@@ -105,24 +105,7 @@ public class Homework20 {
         }
 
                             // TASK 9 -> noXInVariables()
-    /*
-                        Requirement:
-                    -Create a method called noXInVariables()
-                    -This method will take an ArrayList argument, and it will
-                    return an ArrayList with all the x or X removed from
-                    elements.
-                    If the element itself equals to x or X or contains only x
-                    letters, then remove that element.
-                    NOTE: Assume that ArrayList size is at least 1.
-                    Test Data 1: [abc, 123, #$%]
-                    Expected Result 1: [abc, 123, #$%]
-                    Test Data 2: [xyz, 123, #$%]
-                    Expected Result 2: [yz, 123, #$%]
-                    Test Data 3: [x, 123, #$%]
-                    Expected Result 3: [123, #$%]
-                    Test Data 4: [xyXyxy, Xx, ABC]
-                    Expected Result 4: [yyy, ABC]
-     */
+
 
         public static ArrayList<String> noXInVariables(ArrayList<String> str){
             ArrayList<String> newList = new ArrayList<>();
