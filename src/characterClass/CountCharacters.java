@@ -1,4 +1,4 @@
-package CharacterClass;
+package characterClass;
 
 import utilities.CharacterHelper;
 

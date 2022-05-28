@@ -1,4 +1,4 @@
-package Casting;
+package casting;
 
 public class ExerciseConvertingDataTypes {
     public static void main(String [] args){

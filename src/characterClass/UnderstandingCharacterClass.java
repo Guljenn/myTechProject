@@ -1,4 +1,4 @@
-package CharacterClass;
+package characterClass;
 
 public class UnderstandingCharacterClass {
     public static void main(String[] args) {

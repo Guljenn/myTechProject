@@ -2,8 +2,6 @@ package homeworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Locale;
 
 public class Homework20 {
 
@@ -95,14 +93,13 @@ public class Homework20 {
         public static ArrayList<String> removeAndReturnCommons(ArrayList<String> str1, ArrayList<String> str2){
             ArrayList<String> duplicates = new ArrayList<>();
             for(int i = 0; i <= str1.size()-1; i++){
-                for(int j = 0; j <= str2.size()-1; i++){
+                for(int j = 0; j <= str2.size()-1; j++){
                     if(!duplicates.contains(str1.get(i)) && str1.get(i).equals(str2.get(j))) duplicates.add(str1.get(i));
-
                 }
             }
-
             return duplicates;
         }
+
 
                             // TASK 9 -> noXInVariables()
 
@@ -111,8 +108,7 @@ public class Homework20 {
             ArrayList<String> newList = new ArrayList<>();
 
             for(int i = 0; i <= str.size()-1; i++){
-                if(str.get(i).toLowerCase().equals("x")){
-                    str.get(i).replaceAll("[xX]", " ");
+                if(!str.get(i).toLowerCase().equals("x")){
                     newList.add(str.get(i));
                 }
             }
@@ -172,15 +168,25 @@ public class Homework20 {
 
         System.out.println("\n.......... TASK 8 -> removeAndReturnCommons().........\n");
 
-      //  System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java, C#, C#")), new ArrayList<>(Arrays.asList("Python, C#, C+"))));
-        // IndexOutOfBoundsException
+        ArrayList<String> array1 = new ArrayList<>();
+        array1.add("Java");
+        array1.add("is");
+        array1.add("fun");
+
+        ArrayList<String> array2 = new ArrayList<>();
+        array2.add("Java");
+        array2.add("C#");
+        array2.add("Python");
+        System.out.println(removeAndReturnCommons(new ArrayList<>(array1), new ArrayList<>(array2)));
 
         System.out.println(".......... TASK 9 -> noXInVariables().........");
 
-        System.out.println(noXInVariables(new ArrayList<>(Arrays.asList("x, 123, #$%"))));
+        ArrayList<String> noXList = new ArrayList<>();
+        noXList.add("xyl");
+        noXList.add("abc");
+        noXList.add("123");
 
-        // Empty
-
+        System.out.println(noXInVariables(new ArrayList<>(noXList)));
 
 
 

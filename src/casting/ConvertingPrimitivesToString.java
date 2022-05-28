@@ -1,4 +1,4 @@
-package Casting;
+package casting;
 
 public class ConvertingPrimitivesToString {
     public static void main(String [] args){

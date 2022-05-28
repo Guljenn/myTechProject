@@ -1,4 +1,4 @@
-package Casting;
+package casting;
 
 public class CastingPrimitives {
     public static void main(){
