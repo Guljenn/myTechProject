@@ -2,6 +2,7 @@ package homeworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Homework20 {
 
@@ -71,13 +72,13 @@ public class Homework20 {
                             // TASK 6 -> removeStringsSpecialDigits()
 
             public static String removeStringsSpecialDigits(String str) {
-               String result = "";
+               StringBuilder result = new StringBuilder();
                for(char c : str.toCharArray()){
                    if(Character.isWhitespace(c) || Character.isLetter(c)){
-                       result += c;
+                       result.append(c);
                    }
                }
-                return result;
+                return result.toString();
             }
                                 // TASK 7 -> removeArraySpecialsDigits()
 
@@ -107,9 +108,10 @@ public class Homework20 {
         public static ArrayList<String> noXInVariables(ArrayList<String> str){
             ArrayList<String> newList = new ArrayList<>();
 
-            for(int i = 0; i <= str.size()-1; i++){
-                if(!str.get(i).toLowerCase().equals("x")){
-                    newList.add(str.get(i));
+           for(String string : str){
+               if(!string.equals("x")){
+                   string = string.toLowerCase().replaceAll("x", "");
+                   newList.add(string);
                 }
             }
             return newList;

@@ -1,169 +1,124 @@
 package homeworks;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Homework21 {
 
+                        // TASK - 1
+    public static void fizzBuzz(int number) {
+        for (int i = 1; i <= 18; i++) {
+            if (i % 15 == 0) System.out.println("FizzBuzz");
+            else if (i % 3 == 0) System.out.println("Fizz");
+            else if (i % 5 == 0) System.out.println("Buzz");
+            else System.out.println(i);
 
-    public static boolean hasLowerCase(String str) {
-
-        for (char word : str.toCharArray())
-            if (Character.isLowerCase(word)) return true;
-
-        return false;
-    }
-
-
-    public static ArrayList<Integer> noZero(ArrayList<Integer> number) {
-        ArrayList<Integer> newList = new ArrayList<>();
-
-        for (int i = 0; i <= number.size() - 1; i++) {
-            if (number.get(i) != 0) newList.add(number.get(i));
         }
-        return newList;
+    }
+                        // TASK - 2
+
+    public static String fizzBuzz2(int number) {
+
+        if (number % 15 == 0) return "FizzBuzz";
+        else if (number % 3 == 0) return "Fizz";
+        else if (number % 5 == 0) return "Buzz";
+         return String.valueOf(number);
+
+                           // TASK - 3
+
     }
 
-        public static int[][] numberAndSquare(int[] arr){
-            int[][] newList = new int[arr.length][2];
-            for(int i = 0; i <= arr.length-1; i++){
-                newList[i][0] = arr[i];
-                newList[i][1] = arr[i] * arr[i];
+        public static int findSumOfNumbers(String str) {
+            int num = 0;
+            int sum = 0;
+
+            for(int i = 0; i <= str.length()-1; i++){
+                if(Character.isDigit(str.charAt(i)))
+                    num = num*10 + (str.charAt(i) - '0');  // if a single number is found, it will not be multiplied by 10
+                                                           // if there is a number followed by another number it will multiply it
+                                                           // -0 is to find the index of character in the string
+                else{
+                    sum += num;  // Update the value and add to num
+                    num = 0;     // reset the number
+                }
             }
-            return newList;
+            return sum + num;     // return the sum + num
+
         }
 
-    public static boolean containsValue(String[] str, String str1){
-        Arrays.sort(str);
+                                        // TASK 4
 
 
-        return Arrays.binarySearch(str, str1) > 0;
-    }
-    public static String reverseSentence(String str){
-        String[] words = str.split(" "); // splitting each word in the array
-        if(words.length < 2) return "Invalid!";
-        else
-            words[0] = (words[0].charAt(0) + "").toLowerCase() + words[0].substring(1);
-        words[words.length-1] = (words[words.length-1].charAt(0) + "").toUpperCase() + words[words.length-1].substring(1);
-        String reverse = "";
-
-        for(int i = words.length-1; i >= 0; i--)
-            reverse += words[i] + " ";
-
-        return reverse;
-    }
-
-    public static String removeStringSpecialsDigits(String str){
-
-                String word = "";
+    public static int findBiggestNumber(String str) {
+        int num = 0;
+        int max = 0;
         for(int i = 0; i <= str.length()-1; i++){
-            if(Character.isLetter(str.charAt(i)) || Character.isWhitespace(str.charAt(i))) {
-                        word += str.charAt(i);
+            if(Character.isDigit(str.charAt(i))){
+                num = num * 10 + (str.charAt(i) - '0');
+            }
+            else{
+                max = Math.max(max, num);  // Update maximum value
+                num = 0;                       // Reset the number
             }
         }
+        return Math.max(max, num);           // return the max
 
-        return word;
     }
-
-
-
-    public static String[] removeArraySpecialDigits(String[] arr){
-        for(int i = 0; i <= arr.length-1;i++)
-            arr[i] = arr[i].replaceAll("[^A-Za-z]", "");
-
-        return arr;
-    }
-
-
-    public static ArrayList<String> removeAndReturnCommons(ArrayList<String> str1, ArrayList<String> str2){
-
-       ArrayList<String> duplicates = new ArrayList<>();
-       for(int i = 0; i <= str1.size()-1; i++){
-           for(int j = 0; j <= str2.size()-1; j++){
-               if(!duplicates.contains(str1.get(i)) && str1.get(i).equals(str2.get(j))) duplicates.add(str1.get(i));
-           }
-       }
-        return duplicates;
-    }
-                    /*
-                    Requirement:
-                -Create a method called noXInVariables()
-                -This method will take an ArrayList argument, and it will
-                return an ArrayList with all the x or X removed from
-                elements.
-                If the element itself equals to x or X or contains only x
-                letters, then remove that element.
-                NOTE: Assume that ArrayList size is at least 1.
-                Test Data 1: [abc, 123, #$%]
-                Expected Result 1: [abc, 123, #$%]
-                Test Data 2: [xyz, 123, #$%]
-                Expected Result 2: [yz, 123, #$%]
-                Test Data 3: [x, 123, #$%]
-                Expected Result 3: [123, #$%]
-                Test Data 4: [xyXyxy, Xx, ABC]
-                Expected Result 4: [yyy, ABC]
-                     */
-    public static ArrayList<String> noXInVariables(ArrayList<String> str){
-        ArrayList<String> noXList = new ArrayList<>();
-        for(int i = 0; i <= str.size()-1; i++){
-           // i = str.get(i).toLowerCase().replaceAll("[Xx]", " ");
-             noXList.add(str.get(i));
+                                        // TASK 5
+    public static String countSequenceOfCharacters1(String s){
+        StringBuilder sb = new StringBuilder();  // empty container to increment and store count
+        int count = 0;    // create counter
+        if (s.length() == 0) return "";    // if string is empty return empty
+        else{   // second condition
+            for (int i = 0; i < s.length() - 1; i++) {    // count one if string is not empty
+                count = 1;
+                if (("" + s.charAt(i)).equals("" + s.charAt(i + 1))){   // count if the characters that are consecutive are equal
+                    count ++;   // increment the count n
+                    i = i + count - 1;  // update
+                }
+                sb.append(count).append(s.charAt(i));   // append the count and characters
+            }
+            if (!("" + s.charAt(s.length() - 1)).equals(("" + s.charAt(s.length() - 2)))) sb.append("1").append(s.charAt(s.length() - 1));
+            // if they don't equal, append count and characters - this accounts for characters that don't have a duplicate
         }
-        return noXList;
+        return sb.toString();
     }
+
+
+
+
 
 
 
     public static void main(String[] args) {
-        System.out.println(hasLowerCase("JAVA"));
-        System.out.println(hasLowerCase("java"));
-
-        System.out.println(noZero(new ArrayList<>(Arrays.asList(1, 3, 0))));
-
-        System.out.println(Arrays.deepToString(numberAndSquare(new int[]{1,3,4})));
-
-        System.out.println(reverseSentence("Java is fun"));
-        System.out.println(removeStringSpecialsDigits("I love you &&"));
-
-        System.out.println(Arrays.toString(removeArraySpecialDigits(new String[]{"123Java", "#$%is", "fun"})));
+        System.out.println(".......fizzBuz().......");
+        fizzBuzz(3);
+        fizzBuzz(5);
+        fizzBuzz(18);
 
 
+        System.out.println(".......fizzBuz2().......");
+        System.out.println(fizzBuzz2(1));
+        System.out.println(fizzBuzz2(3));
+        System.out.println(fizzBuzz2(5));
+        System.out.println(fizzBuzz2(15));
 
-      // System.out.println(removeAndReturnCommons(new ArrayList<>(Arrays.asList("Java", "C#", "C#")), new ArrayList<>(Arrays.asList("Python, C#", "C++"))));
+        System.out.println(".......findSumOfNumbers().......");
 
-        ArrayList<String> array1 = new ArrayList<>();
-        array1.add("Java");
-        array1.add("C#");
-        array1.add("C#");
+        System.out.println(findSumOfNumbers("abc$")); // 0
+        System.out.println(findSumOfNumbers("a1b4c  6#")); // 11
+        System.out.println(findSumOfNumbers("ab110c045d")); // 155
+        System.out.println(findSumOfNumbers("525"));  // 525
 
-        ArrayList<String> array2 = new ArrayList<>();
-        array2.add("Python");
-        array2.add("C#");
-        array2.add("C++");
-        System.out.println(removeAndReturnCommons(new ArrayList<>(array1), new ArrayList<>(array2)));
+        System.out.println(".......findBiggestNumber().......");
+        System.out.println(findBiggestNumber("abc$")); // 0
+        System.out.println(findBiggestNumber("a1b4c  6#")); // 6
+        System.out.println(findBiggestNumber("ab110c045d")); //110
+        System.out.println(findBiggestNumber("525")); // 525
 
-        ArrayList<String> s1 = new ArrayList<>();
-        s1.add("Java");
-        s1.add("C#");
-        s1.add("C#");
+        System.out.println(".......countSequenceOfCharacters().......");
+        System.out.println(countSequenceOfCharacters1("aaAAa"));
 
-        ArrayList<String> s2 = new ArrayList<>();
-        s2.add("Python");
-        s2.add("C#");
-        s2.add("C++");
-        System.out.println(removeAndReturnCommons(new ArrayList<>(s1), new ArrayList<>(s2)));
 
-        ArrayList<String> noXList = new ArrayList<>();
-        noXList.add("xyl");
-        noXList.add("abc");
-        noXList.add("123");
-
-        System.out.println(noXInVariables(new ArrayList<>(noXList)));
-
-        ArrayList<String> list = new ArrayList<>();
-        list.add("xyXyxy");
-        list.add("Xx");
-        list.add("ABC");
-        System.out.println(noXInVariables(new ArrayList<>(list)));
-    }
         }
+
+
+    }
+

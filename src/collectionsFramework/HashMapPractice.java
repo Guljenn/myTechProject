@@ -54,5 +54,28 @@ public class HashMapPractice {
 
         System.out.println(students.size()); // 8
         System.out.println(students);
+
+        HashMap<String, Integer> players = new HashMap<>();
+
+        players.put("Alona", 5);
+        players.put("Jenny", 4);
+        players.put("Mike", 3);
+
+        players.get("Alona");
+
+        System.out.println(players);
+
+        System.out.println(players.containsKey("Alona"));
+
+     players.remove("Mike");
+
+     if(players.get("Alona") != null){
+         players.put("Jenny", players.get("Alona"));
+
+         System.out.println(players);
+
+
+
+     }
+        }
     }
-}
