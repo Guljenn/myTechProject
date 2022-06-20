@@ -69,24 +69,6 @@ public class Homework22 {
     }
 
                                     // TASK - 5 firstDuplicate()
-    /*
-    Requirement:
-    -Create a method called firstDuplicate()
-    -This method will take an int array argument and it will
-    return an int which is the first duplicated number.
-    NOTE: All elements will be positive numbers.
-    NOTE: If there are no duplicates, then return -1
-    NOTE: If there are more than one duplicate, then return
-    the one for which second occurrence has the smallest
-    index.
-    Test Data 1: []
-    Expected Result 1: -1
-    Test Data 2: [1]
-    Expected Result 2: -1
-    Test Data 3: [1, 2, 2, 3]
-    Expected Result 3: 2
-    Test Data 4: [1,  2, 3, 3, 4, 1]
-     */
 
 
     public static int firstDuplicate(int[] array) {
