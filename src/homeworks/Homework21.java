@@ -4,7 +4,7 @@ public class Homework21 {
 
                         // TASK - 1
     public static void fizzBuzz(int number) {
-        for (int i = 1; i <= 18; i++) {
+        for (int i = 1; i <= number; i++) {
             if (i % 15 == 0) System.out.println("FizzBuzz");
             else if (i % 3 == 0) System.out.println("Fizz");
             else if (i % 5 == 0) System.out.println("Buzz");
